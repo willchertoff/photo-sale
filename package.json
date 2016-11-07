@@ -42,6 +42,7 @@
     "react-hot-loader": "^3.0.0-beta.4",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.0",
+    "validate-commit-msg": "^2.8.2",
     "webpack": "^1.12.12",
     "webpack-dev-server": "^1.14.1"
   },
@@ -59,7 +60,7 @@
     "ghooks": {
       "pre-commit": "npm run lint",
       "commit-msg": "validate-commit-msg"
-      },
+    },
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
