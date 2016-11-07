@@ -1,5 +1,5 @@
 const initialState = {
-  messageString: 'Hello',
+  messageString: 'Photo-Sale',
 };
 
 export default function message(state = initialState, action) {

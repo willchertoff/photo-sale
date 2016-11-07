@@ -10,7 +10,7 @@ class App extends Component {
 
     return (
       <h1>
-        {`${messageString} World!`}
+        {messageString}
       </h1>
     );
   }
