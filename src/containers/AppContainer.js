@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import PhotoStreamContainer from './PhotoStreamContainer';
+import BlogContainer from './BlogContainer';
 
 const propTypes = {
   panel: PropTypes.string.isRequired,
@@ -9,9 +10,10 @@ const propTypes = {
 
 class AppContainer extends Component {
 
-  getPannel(panel = 'photo-stream') {
+  getPannel(panel = 'stream') {
     const panels = {
-      'photo-stream': () => (<PhotoStreamContainer {...this.props} />),
+      stream: () => (<PhotoStreamContainer {...this.props} />),
+      blog: () => (<BlogContainer {...this.props} />),
     };
     return panels[panel]();
   }
@@ -26,7 +28,7 @@ class AppContainer extends Component {
 function mapStateToProps(state, { params }) {
   const { message } = state;
   return {
-    panel: params.panel || 'photo-stream',
+    panel: params.panel || 'stream',
     message,
   };
 }
