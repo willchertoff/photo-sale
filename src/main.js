@@ -18,5 +18,6 @@ ReactDOM.render(
       <Route path="/(:panel)" component={AppContainer} />
     </Router>
   </Provider>,
+  // eslint-disable-next-line
   document.getElementById('main')
 );
