@@ -12,14 +12,15 @@ const propTypes = {
 
 class AppContainer extends Component {
 
-  getPannel(panel = 'stream') {
+  getPannel(panel) {
     const panels = {
       stream: () => (<PhotoStreamContainer {...this.props} />),
       blog: () => (<BlogContainer {...this.props} />),
       shop: () => (<ShopContainer {...this.props} />),
       video: () => (<VideoStreamContainer {...this.props} />),
+      default: () => (<PhotoStreamContainer {...this.props} />),
     };
-    return panels[panel]();
+    return (panels[panel] || panels.default)();
   }
   render() {
     const { panel } = this.props;
