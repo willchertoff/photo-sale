@@ -1,15 +1,25 @@
 import React, { Component, PropTypes } from 'react';
+import Masonry from 'react-masonry-component';
 
 const propTypes = {
-  panel: PropTypes.string.isRequired,
+  images: PropTypes.array.isRequired,
 };
 
 class Stream extends Component {
   render() {
-    const { panel } = this.props;
+    const { images } = this.props;
+    const masonryImages = images.map(image => (
+      <li key={image.imageId} className="image-element-class">
+        <img src={image.url} alt={image.Id} />
+      </li>
+    ));
     return (
       <div className="panel">
-        <p>{panel}</p>
+        <Masonry
+          className={'my-gallery-class'}
+        >
+          {masonryImages}
+        </Masonry>
       </div>
     );
   }
