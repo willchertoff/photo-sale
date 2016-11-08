@@ -1,19 +1,17 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 const propTypes = {
-  panel: PropTypes.string.isRequired,
+  videos: PropTypes.array.isRequired,
 };
 
-class VideoStream extends Component {
-  render() {
-    const { panel } = this.props;
-    return (
-      <div className="panel">
-        <p>{panel}</p>
-      </div>
-    );
-  }
-}
+const VideoStream = ({ videos }) => {
+  const hasVideos = videos.length > 0;
+  return (
+    <div className="panel">
+      <p>{hasVideos ? videos.length : 'No'} Videos</p>
+    </div>
+  );
+};
 
 VideoStream.propTypes = propTypes;
 
