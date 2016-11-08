@@ -31,8 +31,9 @@ class AppContainer extends Component {
 
 function mapStateToProps(state, { params }) {
   const { message } = state;
+  const { panel } = params;
   return {
-    panel: params.panel || 'stream',
+    panel: panel || 'stream',
     message,
   };
 }
