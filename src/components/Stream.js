@@ -7,14 +7,19 @@ const propTypes = {
 
 const Stream = ({ images }) => {
   const masonryImages = images.map(image => (
-    <li key={image.imageId} className="image-element-class">
+    <div key={image.imageId} className="image-item">
       <img src={image.url} alt={image.Id} />
-    </li>
+    </div>
   ));
+  const mOptions = {
+    itemSelector: '.image-item',
+    percentPosition: true,
+  }
   return (
     <div className="panel">
       <Masonry
-        className={'my-gallery-class'}
+        className={'gal'}
+        options={mOptions}
       >
         {masonryImages}
       </Masonry>

@@ -1,5 +1,21 @@
 .panel {
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.gal {
+  max-width: 1580px;
+  margin: auto;
+  margin-top: 10%;
+}
+
+.image-item {
+  width: 25%;
+  text-align: center;
+  padding: 50px;
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
 }
