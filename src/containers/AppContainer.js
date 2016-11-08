@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PhotoStreamContainer from './PhotoStreamContainer';
 import BlogContainer from './BlogContainer';
 import ShopContainer from './ShopContainer';
+import VideoStreamContainer from './VideoStreamContainer';
 
 const propTypes = {
   panel: PropTypes.string.isRequired,
@@ -16,6 +17,7 @@ class AppContainer extends Component {
       stream: () => (<PhotoStreamContainer {...this.props} />),
       blog: () => (<BlogContainer {...this.props} />),
       shop: () => (<ShopContainer {...this.props} />),
+      video: () => (<VideoStreamContainer {...this.props} />),
     };
     return panels[panel]();
   }
