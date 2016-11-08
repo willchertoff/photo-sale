@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
+import keydown from 'react-keydown';
 import PhotoStreamContainer from './PhotoStreamContainer';
 import BlogContainer from './BlogContainer';
 import ShopContainer from './ShopContainer';
@@ -12,6 +13,7 @@ const propTypes = {
 
 class AppContainer extends Component {
 
+
   getPannel(panel) {
     const panels = {
       stream: () => (<PhotoStreamContainer {...this.props} />),
@@ -22,6 +24,12 @@ class AppContainer extends Component {
     };
     return (panels[panel] || panels.default)();
   }
+  /* eslint-disable class-methods-use-this */
+  @keydown('up', 'down', 'right', 'left')
+  translate(event) {
+    return event;
+  }
+  /* eslint-enable class-methods-use-this */
   render() {
     const { panel } = this.props;
     return (

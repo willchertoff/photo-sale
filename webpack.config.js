@@ -16,7 +16,7 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.js$/, loaders: ['babel?' + JSON.stringify({presets: ['react', 'es2015', 'stage-0']})], exclude: /node_modules/ },
+      { test: /\.js$/, loaders: ['babel?' + JSON.stringify({presets: ['react', 'es2015', 'stage-0'], plugins: ['transform-decorators-legacy']})], exclude: /node_modules/ },
       { test: /\.scss$/, loaders: ['style', 'css', 'postcss', 'sass'] }
     ]
   },
