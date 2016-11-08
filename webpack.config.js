@@ -17,6 +17,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js$/, loaders: ['babel?' + JSON.stringify({presets: ['react', 'es2015', 'stage-0'], plugins: ['transform-decorators-legacy']})], exclude: /node_modules/ },
+      { test: /masonry|imagesloaded|fizzy\-ui\-utils|desandro\-|outlayer|get\-size|doc\-ready|eventie|eventemitter/, loader: 'imports?define=>false&this=>window' },
       { test: /\.scss$/, loaders: ['style', 'css', 'postcss', 'sass'] }
     ]
   },
