@@ -14,7 +14,7 @@ const Stream = ({ images }) => {
   const mOptions = {
     itemSelector: '.image-item',
     percentPosition: true,
-  }
+  };
   return (
     <div className="panel">
       <Masonry
