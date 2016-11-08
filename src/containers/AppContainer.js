@@ -7,12 +7,13 @@ import BlogContainer from './BlogContainer';
 import ShopContainer from './ShopContainer';
 import VideoStreamContainer from './VideoStreamContainer';
 
+
 const propTypes = {
   panel: PropTypes.string.isRequired,
+  router: PropTypes.object.isRequired,
 };
 
 class AppContainer extends Component {
-
 
   getPannel(panel) {
     const panels = {
@@ -27,7 +28,14 @@ class AppContainer extends Component {
   /* eslint-disable class-methods-use-this */
   @keydown('up', 'down', 'right', 'left')
   translate(event) {
-    return event;
+    const { push } = this.props.router;
+    const paths = {
+      ArrowUp: 'blog',
+      ArrowRight: 'shop',
+      ArrowLeft: 'video',
+      ArrowDown: 'stream',
+    };
+    return push(paths[event.code]);
   }
   /* eslint-enable class-methods-use-this */
   render() {
