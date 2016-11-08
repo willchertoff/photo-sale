@@ -1,26 +1,12 @@
-import React, { Component, PropTypes } from 'react';
-import { withRouter } from 'react-router';
-import { connect } from 'react-redux';
-
-const propTypes = {
-  panel: PropTypes.string.isRequired,
-};
+import React, { Component } from 'react';
+import Blog from '../components/Blog';
 
 class BlogContainer extends Component {
   render() {
-    const { panel } = this.props;
     return (
-      <p>{panel}</p>
+      <Blog {...this.props} />
     );
   }
 }
 
-function mapStateToProps(state, { params }) {
-  return {
-    panel: params.panel || 'photo-stream',
-  };
-}
-
-BlogContainer.propTypes = propTypes;
-
-export default withRouter(connect(mapStateToProps)(BlogContainer));
+export default BlogContainer;

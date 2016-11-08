@@ -1,26 +1,12 @@
-import React, { Component, PropTypes } from 'react';
-import { withRouter } from 'react-router';
-import { connect } from 'react-redux';
-
-const propTypes = {
-  panel: PropTypes.string.isRequired,
-};
+import React, { Component } from 'react';
+import VideoStream from '../components/VideoStream';
 
 class VideoStreamContainer extends Component {
   render() {
-    const { panel } = this.props;
     return (
-      <p>{panel}</p>
+      <VideoStream {...this.props} />
     );
   }
 }
 
-function mapStateToProps(state, { params }) {
-  return {
-    panel: params.panel || 'video-stream',
-  };
-}
-
-VideoStreamContainer.propTypes = propTypes;
-
-export default withRouter(connect(mapStateToProps)(VideoStreamContainer));
+export default VideoStreamContainer;
