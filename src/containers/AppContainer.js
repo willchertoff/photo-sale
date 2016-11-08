@@ -3,6 +3,7 @@ import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import PhotoStreamContainer from './PhotoStreamContainer';
 import BlogContainer from './BlogContainer';
+import ShopContainer from './ShopContainer';
 
 const propTypes = {
   panel: PropTypes.string.isRequired,
@@ -14,6 +15,7 @@ class AppContainer extends Component {
     const panels = {
       stream: () => (<PhotoStreamContainer {...this.props} />),
       blog: () => (<BlogContainer {...this.props} />),
+      shop: () => (<ShopContainer {...this.props} />),
     };
     return panels[panel]();
   }
