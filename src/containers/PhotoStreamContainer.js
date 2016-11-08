@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Stream from '../components/Stream';
 
+/* To replace with reducer data */
 const images = [
   { imageId: 1, location: 'Portland, OR', url: '/' },
   { imageId: 2, location: 'Portland, OR', url: '/' },

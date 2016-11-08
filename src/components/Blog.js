@@ -1,19 +1,17 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 const propTypes = {
-  panel: PropTypes.string.isRequired,
+  posts: PropTypes.array.isRequired,
 };
 
-class Blog extends Component {
-  render() {
-    const { panel } = this.props;
-    return (
-      <div className="panel">
-        <p>{panel}</p>
-      </div>
-    );
-  }
-}
+const Blog = ({ posts }) => {
+  const hasPosts = posts.length > 0;
+  return (
+    <div className="panel">
+      <p>{hasPosts ? posts.length : 'No'} Posts</p>
+    </div>
+  );
+};
 
 Blog.propTypes = propTypes;
 
