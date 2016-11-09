@@ -3,12 +3,14 @@ import Masonry from 'react-masonry-component';
 
 const propTypes = {
   images: PropTypes.array.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
 
-const Stream = ({ images }) => {
+const Stream = ({ images, handleClick }) => {
   const masonryImages = images.map(image => (
     <div key={image.imageId} className="image-item">
-      <img src={image.url} alt={image.Id} />
+      <img src={image.url} alt={image.imageId} data-name={image.imageId} />
+      <p>{image.title}</p>
     </div>
   ));
   const mOptions = {
@@ -20,6 +22,7 @@ const Stream = ({ images }) => {
       <Masonry
         className={'gal'}
         options={mOptions}
+        onClick={handleClick}
       >
         {masonryImages}
       </Masonry>
