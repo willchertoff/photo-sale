@@ -6,9 +6,14 @@ const propTypes = {
 
 const Blog = ({ posts }) => {
   const hasPosts = posts.length > 0;
+  const mostRecentPost = hasPosts ? (
+    posts.sort((a, b) => (new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()))[0]
+  ) : (
+    false
+  );
   return (
     <div className="panel">
-      <p>{hasPosts ? posts.length : 'No'} Posts</p>
+      <p>{mostRecentPost.title}</p>
     </div>
   );
 };
