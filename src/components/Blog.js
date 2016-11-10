@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+// import BlogArticle from './BlogArticle';
 
 const propTypes = {
   posts: PropTypes.array.isRequired,

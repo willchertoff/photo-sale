@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
 import keydown from 'react-keydown';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import PhotoStreamContainer from './PhotoStreamContainer';
@@ -10,7 +10,7 @@ import VideoStreamContainer from './VideoStreamContainer';
 
 const propTypes = {
   panel: PropTypes.string.isRequired,
-  router: PropTypes.object.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 class AppContainer extends Component {
@@ -28,14 +28,14 @@ class AppContainer extends Component {
   /* eslint-disable class-methods-use-this */
   @keydown('up', 'down', 'right', 'left')
   translate(event) {
-    const { push } = this.props.router;
+    const { dispatch } = this.props;
     const paths = {
       ArrowUp: 'blog',
       ArrowRight: 'shop',
       ArrowLeft: 'video',
       ArrowDown: 'stream',
     };
-    return push(paths[event.code]);
+    dispatch(push(paths[event.code]));
   }
   /* eslint-enable class-methods-use-this */
   render() {
@@ -52,15 +52,13 @@ class AppContainer extends Component {
   }
 }
 
-function mapStateToProps(state, { params }) {
-  const { message } = state;
-  const { panel } = params;
+function mapStateToProps(state, { location }) {
+  const { pathname } = location;
   return {
-    panel: panel || 'stream',
-    message,
+    panel: pathname.replace(/\//g, '') || '',
   };
 }
 
 AppContainer.propTypes = propTypes;
 
-export default withRouter(connect(mapStateToProps)(AppContainer));
+export default connect(mapStateToProps)(AppContainer);
