@@ -3,18 +3,19 @@ import React, { PropTypes } from 'react';
 
 const propTypes = {
   posts: PropTypes.array.isRequired,
+  mostRecentPost: PropTypes.object.isRequired,
+  postId: PropTypes.string,
 };
 
-const Blog = ({ posts }) => {
-  const hasPosts = posts.length > 0;
-  const mostRecentPost = hasPosts ? (
-    posts.sort((a, b) => (new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()))[0]
+const Blog = ({ posts, mostRecentPost, postId }) => {
+  const post = postId ? (
+    posts[postId]
   ) : (
-    false
+    mostRecentPost
   );
   return (
     <div className="panel">
-      <p>{mostRecentPost.title}</p>
+      <p>{post.title}</p>
     </div>
   );
 };

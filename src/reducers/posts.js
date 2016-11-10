@@ -8,9 +8,15 @@ const initialState = {
   ],
 };
 
+const mostRecentPost = items => items.sort((a, b) => (
+  new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
+))[0];
+
 export default function posts(state = initialState, action) {
   switch (action.type) {
     default:
-      return { ...state };
+      return { ...state,
+        mostRecentPost: mostRecentPost(state.items),
+      };
   }
 }

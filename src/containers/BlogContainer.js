@@ -14,11 +14,11 @@ function mapStateToProps(state, { location }) {
   const { query } = location;
   const { postId } = query;
   const { posts } = state;
-  const { items } = posts;
+  const { items, mostRecentPost } = posts;
   return {
-    query: query || '',
     posts: items,
     postId,
+    mostRecentPost,
   };
 }
 
