@@ -25,7 +25,6 @@ class AppContainer extends Component {
     };
     return (panels[panel] || panels.default)();
   }
-  /* eslint-disable class-methods-use-this */
   @keydown('up', 'down', 'right', 'left')
   translate(event) {
     const { dispatch } = this.props;
@@ -37,7 +36,6 @@ class AppContainer extends Component {
     };
     dispatch(push(paths[event.code]));
   }
-  /* eslint-enable class-methods-use-this */
   render() {
     const { panel } = this.props;
     return (
