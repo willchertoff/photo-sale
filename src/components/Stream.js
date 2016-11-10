@@ -2,12 +2,12 @@ import React, { PropTypes } from 'react';
 import Masonry from 'react-masonry-component';
 
 const propTypes = {
-  images: PropTypes.array.isRequired,
+  items: PropTypes.array.isRequired,
   handleClick: PropTypes.func.isRequired,
 };
 
-const Stream = ({ images, handleClick }) => {
-  const masonryImages = images.map(image => (
+const Stream = ({ items, handleClick }) => {
+  const masonryImages = items.map(image => (
     <div key={image.imageId} className="image-item">
       <img src={image.url} alt={image.imageId} data-name={image.imageId} />
       <p>{image.title}</p>
