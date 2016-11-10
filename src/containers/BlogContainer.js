@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Blog from '../components/Blog';
 
-/* To replace with reducer data */
-
 class BlogContainer extends Component {
   render() {
     return (
