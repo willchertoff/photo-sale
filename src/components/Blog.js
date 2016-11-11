@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react';
-// import BlogArticle from './BlogArticle';
+import React, { Component, PropTypes } from 'react';
+import BlogArticle from './BlogArticle';
 
 const propTypes = {
   posts: PropTypes.array.isRequired,
@@ -9,21 +9,31 @@ const propTypes = {
   prevPost: PropTypes.object.isRequired,
 };
 
-const Blog = ({ posts, onClick, post, nextPost, prevPost }) => (
-  <div className="panel">
-    <div className="center-content blog-article">
-      <img src={post.imageUrl} alt={`${post.title}'s feature`} />
-      <p>{post.title}</p>
-      <p>{post.publishDate}</p>
-      <p className="text-2-col">{post.body}</p>
-      <button onClick={onClick} data-action="nextPost" >{`Next Post -- ${nextPost.title}`}</button>
-      <button onClick={onClick} data-action="prevPost" >{`Prev Post -- ${prevPost.title}`}</button>
-    </div>
-    <div className="sidebar">
-      {posts.map(p => <p key={p.title}>{p.title}</p>)}
-    </div>
-  </div>
-);
+class Blog extends Component {
+  render() {
+    const { post, nextPost, prevPost, posts, onClick } = this.props;
+    const { imageUrl, title, publishDate, body } = post;
+    return (
+      <div className="panel">
+        <div className="center-content blog-article">
+          <BlogArticle
+            post={post}
+            onClick={onClick}
+            imageUrl={imageUrl}
+            title={title}
+            publishDate={publishDate}
+            body={body}
+            nextPostTitle={nextPost.title}
+            prevPostTitle={prevPost.title}
+          />
+          <div className="sidebar">
+            {posts.map(p => <p key={p.title}>{p.title}</p>)}
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
 
 Blog.propTypes = propTypes;
 
