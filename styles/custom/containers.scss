@@ -23,3 +23,12 @@
     margin: 1em 0;
   }
 }
+
+#main {
+  height: 100%;
+  width: 100%;
+}
+
+.center-content {
+  @include centerer;
+}
