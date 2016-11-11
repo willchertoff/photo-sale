@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { push } from 'react-router-redux';
 import { connect } from 'react-redux';
 import { last, first } from 'lodash';
-import Blog from '../components/Blog';
+import BlogArticle from '../components/BlogArticle';
 import cachePostId from '../actions/PostActions';
 
 const propTypes = {
@@ -13,6 +13,7 @@ const propTypes = {
   prevPost: PropTypes.shape({
     postId: PropTypes.number.isRequired,
   }),
+  post: PropTypes.object.isRequired,
 };
 
 class BlogContainer extends Component {
@@ -32,8 +33,23 @@ class BlogContainer extends Component {
     actions[action]();
   }
   render() {
+    const { post, nextPost, prevPost } = this.props;
+    const { imageUrl, title, publishDate, body } = post;
     return (
-      <Blog {...this.props} onClick={this.handleArticleClick} />
+      <div className="panel">
+        <div className="center-content blog-article">
+          <BlogArticle
+            post={post}
+            onClick={this.handleArticleClick}
+            imageUrl={imageUrl}
+            title={title}
+            publishDate={publishDate}
+            body={body}
+            nextPostTitle={nextPost.title}
+            prevPostTitle={prevPost.title}
+          />
+        </div>
+      </div>
     );
   }
 }
