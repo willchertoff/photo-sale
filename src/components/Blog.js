@@ -17,7 +17,7 @@ const Blog = ({ posts, onClick, post, nextPost, prevPost }) => (
       <p>{post.publishDate}</p>
       <p className="text-2-col">{post.body}</p>
       <button onClick={onClick} data-action="nextPost" >{`Next Post -- ${nextPost.title}`}</button>
-      <button onClick={onClick} data-action="prevPost" >{`Next Post -- ${prevPost.title}`}</button>
+      <button onClick={onClick} data-action="prevPost" >{`Prev Post -- ${prevPost.title}`}</button>
     </div>
     <div className="sidebar">
       {posts.map(p => <p key={p.title}>{p.title}</p>)}
