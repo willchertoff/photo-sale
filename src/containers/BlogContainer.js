@@ -3,6 +3,7 @@ import { push } from 'react-router-redux';
 import { connect } from 'react-redux';
 import { last, first } from 'lodash';
 import BlogArticle from '../components/BlogArticle';
+import BlogSideBar from '../components/BlogSideBar';
 import cachePostId from '../actions/PostActions';
 
 const propTypes = {
@@ -14,12 +15,14 @@ const propTypes = {
     postId: PropTypes.number.isRequired,
   }),
   post: PropTypes.object.isRequired,
+  posts: PropTypes.array.isRequired,
 };
 
 class BlogContainer extends Component {
   handleArticleClick = (event) => {
     const { dispatch } = this.props;
     const action = event.target.getAttribute('data-action');
+    const id = event.target.getAttribute('data-post');
     const actions = {
       nextPost: () => {
         dispatch(cachePostId(this.props.nextPost.postId));
@@ -29,15 +32,20 @@ class BlogContainer extends Component {
         dispatch(cachePostId(this.props.prevPost.postId));
         dispatch(push(`/blog?postId=${this.props.prevPost.postId}`));
       },
+      toPost: () => {
+        dispatch(cachePostId(id));
+        dispatch(push(`/blog?postId=${id}`));
+      },
     };
     actions[action]();
   }
   render() {
-    const { post, nextPost, prevPost } = this.props;
+    const { post, nextPost, prevPost, posts } = this.props;
     const { imageUrl, title, publishDate, body } = post;
+    const otherPosts = posts.filter(p => p.postId !== post.postId);
     return (
       <div className="panel">
-        <div className="center-content blog-article">
+        <div className="center-content">
           <BlogArticle
             post={post}
             onClick={this.handleArticleClick}
@@ -47,6 +55,10 @@ class BlogContainer extends Component {
             body={body}
             nextPostTitle={nextPost.title}
             prevPostTitle={prevPost.title}
+          />
+          <BlogSideBar
+            otherPosts={otherPosts}
+            onClick={this.handleArticleClick}
           />
         </div>
       </div>
