@@ -1,15 +1,38 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import Stream from '../components/Stream';
+import Masonry from 'react-masonry-component';
+
+const propTypes = {
+  items: PropTypes.array.isRequired,
+};
 
 class PhotoStreamContainer extends Component {
+  mOptions = {
+    itemSelector: '.image-item',
+    percentPosition: true,
+  };
   handleClick() {
     /* Do Nothing */
     return this;
   }
   render() {
+    const { items } = this.props;
+    const masonryImages = items.map(image => (
+      <div key={image.imageId} className="image-item">
+        <img src={image.url} alt={image.imageId} data-name={image.imageId} />
+        <p>{image.title}</p>
+      </div>
+    ));
     return (
-      <Stream {...this.props} handleClick={this.handleClick} />
+      <div className="panel">
+        <Masonry
+          className={'gal'}
+          options={this.mOptions}
+          onClick={this.handleClick}
+        >
+          {masonryImages}
+        </Masonry>
+      </div>
     );
   }
 }
@@ -21,5 +44,7 @@ function mapStateToProps(state) {
     items,
   };
 }
+
+PhotoStreamContainer.propTypes = propTypes;
 
 export default connect(mapStateToProps)(PhotoStreamContainer);
