@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import keydown from 'react-keydown';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import ReactCSSTransitionReplace from 'react-css-transition-replace';
 import PhotoStreamContainer from './PhotoStreamContainer';
 import BlogContainer from './BlogContainer';
 import ShopContainer from './ShopContainer';
@@ -39,13 +39,9 @@ class AppContainer extends Component {
   render() {
     const { panel } = this.props;
     return (
-      <ReactCSSTransitionGroup
-        transitionName="fade"
-        transitionEnterTimeout={500}
-        transitionLeaveTimeout={100}
-      >
+      <ReactCSSTransitionReplace transitionName="cross-fade" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
         {this.getPannel(panel)}
-      </ReactCSSTransitionGroup>
+      </ReactCSSTransitionReplace>
     );
   }
 }

@@ -55,6 +55,7 @@
     "lodash": "^4.16.6",
     "react": "^15.3.2",
     "react-addons-css-transition-group": "^15.3.2",
+    "react-css-transition-replace": "^2.0.1",
     "react-dom": "^15.3.2",
     "react-keydown": "^1.6.3",
     "react-masonry-component": "^4.3.1",

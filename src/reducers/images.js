@@ -7,6 +7,7 @@ const initialState = {
     { imageId: 5, location: 'Portland, OR', url: '/images/tall.JPG', title: 'tall' },
     { imageId: 6, location: 'Portland, OR', url: '/images/taller.JPG', title: 'taller' },
   ],
+  selectedImageIds: [],
 };
 
 export default function images(state = initialState, action) {
