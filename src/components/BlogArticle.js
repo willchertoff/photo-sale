@@ -13,9 +13,9 @@ const propTypes = {
 const BlogArticle = ({ onClick, imageUrl, title, publishDate, body, nextPostTitle, prevPostTitle }) => ( // eslint-disable-line max-len
   <div className="blog-article">
     <img src={imageUrl} alt={`${title}'s feature`} />
-    <p>{title}</p>
-    <p>{publishDate}</p>
-    <p className="text-2-col">{body}</p>
+    <h1 className="blog-title" >{title}</h1>
+    <h5>{publishDate}</h5>
+    <div className="blog-body" dangerouslySetInnerHTML={{ __html: body }} />
     <button onClick={onClick} data-action="nextPost" >{`Next Post -- ${nextPostTitle}`}</button>
     <button onClick={onClick} data-action="prevPost" >{`Prev Post -- ${prevPostTitle}`}</button>
   </div>

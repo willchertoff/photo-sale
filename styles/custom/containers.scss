@@ -31,3 +31,13 @@
 .center-content {
   @include centerer;
 }
+
+.flex {
+  display: flex;
+}
+
+.blog-container {
+  max-width: 1500px;
+  margin: auto;
+  justify-content: space-between;
+}

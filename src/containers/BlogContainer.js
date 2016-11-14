@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { push } from 'react-router-redux';
 import { connect } from 'react-redux';
 import { last, first } from 'lodash';
+import ReactCSSTransitionReplace from 'react-css-transition-replace';
 import BlogArticle from '../components/BlogArticle';
 import BlogSideBar from '../components/BlogSideBar';
 import cachePostId from '../actions/PostActions';
@@ -45,17 +46,19 @@ class BlogContainer extends Component {
     const otherPosts = posts.filter(p => p.postId !== post.postId);
     return (
       <div className="panel">
-        <div className="center-content">
-          <BlogArticle
-            post={post}
-            onClick={this.handleArticleClick}
-            imageUrl={imageUrl}
-            title={title}
-            publishDate={publishDate}
-            body={body}
-            nextPostTitle={nextPost.title}
-            prevPostTitle={prevPost.title}
-          />
+        <div className="blog-container flex">
+          <ReactCSSTransitionReplace transitionName="cross-fade" transitionEnterTimeout={1000} transitionLeaveTimeout={1000}>
+            <BlogArticle
+              post={post}
+              onClick={this.handleArticleClick}
+              imageUrl={imageUrl}
+              title={title}
+              publishDate={publishDate}
+              body={body}
+              nextPostTitle={nextPost.title}
+              prevPostTitle={prevPost.title}
+            />
+          </ReactCSSTransitionReplace>
           <BlogSideBar
             otherPosts={otherPosts}
             onClick={this.handleArticleClick}

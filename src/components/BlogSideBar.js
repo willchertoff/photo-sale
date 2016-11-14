@@ -7,13 +7,15 @@ const propTypes = {
 
 const BlogSideBar = ({ otherPosts, onClick }) => (
   <div className="blog-sidebar">
-    <h4>Latest Posts</h4>
-    {otherPosts.map(post =>
-      <div key={post.title} className="post-aside">
-        <button data-action="toPost" data-post={post.postId} onClick={onClick} >{post.title}</button>
-        <p>{post.publishDate}</p>
-      </div>
-    )}
+    <div className="wrap">
+      <h2>Posts</h2>
+      {otherPosts.map(post =>
+        <div key={post.title} className="post-aside">
+          <button data-action="toPost" data-post={post.postId} onClick={onClick} >{post.title}</button>
+          <p>{post.publishDate}</p>
+        </div>
+      )}
+    </div>
   </div>
 );
 
