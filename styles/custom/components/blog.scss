@@ -1,7 +1,12 @@
 .blog-article {
+  width: 75%;
   img {
     display: block;
     height: auto;
-    width: 100%;
+    max-width: 600px;
   }
+}
+
+.blog-sidebar {
+  width: 25%;
 }
