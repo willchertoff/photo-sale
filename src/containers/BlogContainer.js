@@ -9,7 +9,6 @@ const propTypes = {
 };
 
 class BlogContainer extends Component {
-
   renderContent = () => {
     const { post, posts } = this.props;
     return post ? (
@@ -29,7 +28,7 @@ class BlogContainer extends Component {
   render() {
     return (
       <div className="panel">
-        <div className="blog-container flex">
+        <div className="blog-container">
           {this.renderContent()}
         </div>
       </div>

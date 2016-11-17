@@ -23,7 +23,7 @@ class AppBarContainer extends Component {
   render() {
     return (
       <nav>
-        <div className="nav-wrapper row">
+        <div className="nav-wrapper row small-collapse">
           <div className="column small-6">
             <h1 className="logo"><button data-route="stream" onClick={this.handleClick}>Will Chertoff</button></h1>
           </div>

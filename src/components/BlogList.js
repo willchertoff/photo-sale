@@ -7,13 +7,11 @@ const propTypes = {
 const BlogList = ({ posts }) => (
   <div className="blog-item">
     {posts.map(post => (
-      <div key={post.title}>
-        <div className="main-pic">
-          <img src={`/images/${post.coverImage}.JPG`} alt={post.title} />
-        </div>
-        <div className="blog-title">
-          <p>{post.title}</p>
-          <p>{post.publishDate}</p>
+      <div className="blog-item-inner" key={post.title}>
+        <img className="main-pic" src={`/images/${post.coverImage}.JPG`} alt={post.title} />
+        <div className="blog-item-title">
+          <span>{post.title}</span>
+          <span>{post.publishDate}</span>
         </div>
         <div className="image-list">
           <ul>
