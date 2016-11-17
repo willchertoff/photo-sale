@@ -6,7 +6,6 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-
 import '../styles/main.scss';
 import AppContainer from './containers/AppContainer';
 import configureStore from './store/configureStore';

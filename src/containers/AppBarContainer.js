@@ -23,11 +23,12 @@ class AppBarContainer extends Component {
   render() {
     return (
       <nav>
-        <div className="nav-wrapper">
-          <div className="half">
+        <div className="nav-wrapper row">
+          <div className="column small-6 medium-4 large-3">
             <h1><button data-route="stream" onClick={this.handleClick}>Will Chertoff</button></h1>
           </div>
-          <div className="half">
+          <div className="column medium-4 large-6" />
+          <div className="column small-6 medium-4 large-3">
             <div className="nav-links">
               <ul>
                 <button data-route="stream" onClick={this.handleClick} >Stream</button>
