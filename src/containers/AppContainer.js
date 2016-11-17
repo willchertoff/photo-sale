@@ -7,6 +7,7 @@ import PhotoStreamContainer from './PhotoStreamContainer';
 import BlogContainer from './BlogContainer';
 import ShopContainer from './ShopContainer';
 import VideoStreamContainer from './VideoStreamContainer';
+import AppBarContainer from './AppBarContainer';
 
 const propTypes = {
   panel: PropTypes.string.isRequired,
@@ -39,9 +40,12 @@ class AppContainer extends Component {
   render() {
     const { panel } = this.props;
     return (
-      <ReactCSSTransitionReplace transitionName="cross-fade" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
-        {this.getPannel(panel)}
-      </ReactCSSTransitionReplace>
+      <div>
+        <AppBarContainer />
+        <ReactCSSTransitionReplace transitionName="cross-fade" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
+          {this.getPannel(panel)}
+        </ReactCSSTransitionReplace>
+      </div>
     );
   }
 }
