@@ -1,3 +1,6 @@
+html {
+  background-color: $white;
+}
 h1,
 h2,
 h3,
@@ -18,4 +21,10 @@ input, {
 
 p {
   margin: 1em 0;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  outline: none;
 }

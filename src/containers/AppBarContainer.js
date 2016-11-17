@@ -24,17 +24,16 @@ class AppBarContainer extends Component {
     return (
       <nav>
         <div className="nav-wrapper row">
-          <div className="column small-6 medium-4 large-3">
-            <h1><button data-route="stream" onClick={this.handleClick}>Will Chertoff</button></h1>
+          <div className="column small-6">
+            <h1 className="logo"><button data-route="stream" onClick={this.handleClick}>Will Chertoff</button></h1>
           </div>
-          <div className="column medium-4 large-6" />
-          <div className="column small-6 medium-4 large-3">
+          <div className="column small-6">
             <div className="nav-links">
               <ul>
-                <button data-route="stream" onClick={this.handleClick} >Stream</button>
-                <button data-route="blog" onClick={this.handleClick}>Blog</button>
-                <button data-route="shop" onClick={this.handleClick}>Shop</button>
-                <button data-route="video" onClick={this.handleClick}>Videos</button>
+                <li><button data-route="stream" onClick={this.handleClick} >Stream</button></li>
+                <li><button data-route="blog" onClick={this.handleClick}>Blog</button></li>
+                <li><button data-route="shop" onClick={this.handleClick}>Cart</button></li>
+                <li><button data-route="video" onClick={this.handleClick}>Videos</button></li>
               </ul>
             </div>
           </div>
