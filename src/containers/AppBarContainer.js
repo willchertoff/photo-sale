@@ -16,7 +16,7 @@ class AppBarContainer extends Component {
       blog: 'blog',
       shop: 'shop',
       video: 'video',
-      stream: 'stream',
+      stream: '/',
     };
     dispatch(push(paths[path]));
   }
