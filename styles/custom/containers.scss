@@ -6,10 +6,10 @@
 .gal {
   max-width: 1580px;
   margin: auto;
+  @extend .row;
 }
 
 .image-item {
-  width: 25%;
   text-align: center;
   padding: 20px;
   img {

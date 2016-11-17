@@ -18,9 +18,8 @@ class PhotoStreamContainer extends Component {
   render() {
     const { items } = this.props;
     const masonryImages = items.map(image => (
-      <div key={image.imageId} className="image-item">
+      <div key={image.imageId} className="image-item column small-12 medium-6 large-3">
         <img src={image.url} alt={image.imageId} data-name={image.imageId} />
-        <p>{image.title}</p>
       </div>
     ));
     return (
