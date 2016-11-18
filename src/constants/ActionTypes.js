@@ -1,2 +1,4 @@
-  // eslint-disable-next-line
+  // eslint-disable
 export const UPDATE_LAST_VIEWD_POST = 'UPDATE_LAST_VIEWD_POST';
+export const CHANGE_IS_MOBILE = 'CHANGE_IS_MOBILE';
+export const CHANGE_WIDTH_AND_HEIGHT = 'CHANGE_WIDTH_AND_HEIGHT';

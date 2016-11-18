@@ -2,12 +2,18 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import ReactCSSTransitionReplace from 'react-css-transition-replace';
 import AppBarContainer from './AppBarContainer';
+import { initEnvironment } from '../actions/EnvironmentActions';
 
 const propTypes = {
   children: PropTypes.element.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 class AppContainer extends Component {
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch(initEnvironment());
+  }
   render() {
     return (
       <div>
