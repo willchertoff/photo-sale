@@ -14,11 +14,9 @@ const BlogList = ({ posts }) => (
           <span>{post.publishDate}</span>
         </div>
         <div className="image-list">
-          <ul>
-            {post.imageList.map(image =>
-              <li key={image} ><img src={`/images/${image}.JPG`} alt={image} /></li>
-            )}
-          </ul>
+          {post.imageList.map(image =>
+            <a key={image} ><img src={`/images/${image}.JPG`} alt={image} /></a>
+          )}
         </div>
       </div>
     ))}
