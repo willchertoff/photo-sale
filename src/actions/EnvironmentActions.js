@@ -1,8 +1,6 @@
 /* eslint-disable */
 import * as types from '../constants/ActionTypes';
 
-const window = window;
-
 function changeIsMobile(isMobile) {
   return {
     type: types.CHANGE_IS_MOBILE,
