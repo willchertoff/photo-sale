@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 
@@ -30,10 +31,10 @@ class AppBarContainer extends Component {
           <div className="column small-6">
             <div className="nav-links">
               <ul>
-                <li><button data-route="stream" onClick={this.handleClick} >Stream</button></li>
-                <li><button data-route="blog" onClick={this.handleClick}>Blog</button></li>
-                <li><button data-route="shop" onClick={this.handleClick}>Cart</button></li>
-                <li><button data-route="video" onClick={this.handleClick}>Videos</button></li>
+                <li><Link to="/">Stream</Link></li>
+                <li><Link to="/blog">Blog</Link></li>
+                <li><Link to="/video">Video</Link></li>
+                <li><Link to="/shop">Shop</Link></li>
               </ul>
             </div>
           </div>
