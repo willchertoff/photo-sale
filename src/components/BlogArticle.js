@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
+import { connect } from 'react-redux';
 
 const propTypes = {
   coverImage: PropTypes.string.isRequired,
@@ -7,16 +8,37 @@ const propTypes = {
   body: PropTypes.string.isRequired,
 };
 
-const BlogArticle = ({ coverImage, title, publishDate, body }) => ( // eslint-disable-line max-len
-  <div className="blog-article">
-    <img src={`/images/${coverImage}.JPG`} alt={`${title}'s feature`} />
-    <h1 className="blog-title" >{title}</h1>
-    <h5>{publishDate}</h5>
-    <div className="blog-body" dangerouslySetInnerHTML={{ __html: body }} />
-  </div>
-);
+class BlogArticle extends Component {
+
+  render() {
+    const { coverImage, title, publishDate, body } = this.props;
+    return (
+      <div className="blog-article">
+        <img src={`/images/${coverImage}.JPG`} alt={`${title}'s feature`} />
+        <h1 className="blog-title" >{title}</h1>
+        <h5>{publishDate}</h5>
+        <div className="blog-body" dangerouslySetInnerHTML={{ __html: body }} />
+      </div>
+    );
+  }
+}
+
+function mapStateToProps(state, { params }) {
+  const { postId } = params;
+  const { posts } = state;
+  const { items } = posts;
+  const post = postId ? items[postId - 1] : null;
+  const { coverImage, title, publishDate, body } = post;
+
+  return {
+    coverImage,
+    title,
+    publishDate,
+    body,
+  };
+}
 
 BlogArticle.propTypes = propTypes;
 
 
-export default BlogArticle;
+export default connect(mapStateToProps)(BlogArticle);
