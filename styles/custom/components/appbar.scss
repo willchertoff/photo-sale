@@ -25,9 +25,11 @@
 .logo {
   text-align: left;
   margin: 0;
-  button {
+  a {
     font-size: .875rem;
     line-height: 5rem;
     color: $dgrey;
+    opacity: .72;
+    text-decoration: none;
   }
 }
