@@ -13,6 +13,7 @@ import ShopContainer from './containers/ShopContainer';
 import VideoStreamContainer from './containers/VideoStreamContainer';
 
 import BlogArticle from './components/BlogArticle';
+import Photo from './components/Photo';
 
 import '../styles/main.scss';
 import AppContainer from './containers/AppContainer';
@@ -29,7 +30,9 @@ ReactDOM.render(
         <Route path="/blog" component={BlogContainer}>
           <Route path="/blog/:postId" component={BlogArticle} />
         </Route>
-        <Route path="/" component={PhotoStreamContainer} />
+        <Route path="/" component={PhotoStreamContainer}>
+          <Route path="/photo/:photoId" component={Photo} />
+        </Route>
         <Route path="/shop" component={ShopContainer} />
         <Route path="/video" component={VideoStreamContainer} />
       </Route>
