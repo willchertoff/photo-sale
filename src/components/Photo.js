@@ -3,8 +3,8 @@ import { Link } from 'react-router';
 
 const propTypes = {
   photoId: PropTypes.number.isRequired,
-  nextPhoto: PropTypes.obj.isRequired,
-  prevPhoto: PropTypes.obj.isRequired,
+  nextPhoto: PropTypes.object,
+  prevPhoto: PropTypes.object,
 };
 
 const Photo = ({ photoId, nextPhoto, prevPhoto }) => {

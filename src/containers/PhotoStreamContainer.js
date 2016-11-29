@@ -7,8 +7,8 @@ import Photo from '../components/Photo';
 const propTypes = {
   items: PropTypes.array.isRequired,
   photoId: PropTypes.number,
-  nextPhoto: PropTypes.obj,
-  prevPhoto: PropTypes.obj,
+  nextPhoto: PropTypes.object,
+  prevPhoto: PropTypes.object,
 };
 
 class PhotoStreamContainer extends Component {

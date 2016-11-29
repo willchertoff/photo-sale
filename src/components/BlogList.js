@@ -18,7 +18,7 @@ const BlogList = ({ posts }) => (
         </div>
         <div className="image-list">
           {post.imageList.map(image =>
-            <a key={image} ><img src={`/images/${image}.JPG`} alt={image} /></a>
+            <Link to={`/photo/${image}`} key={image} ><img src={`/images/${image}.JPG`} alt={image} /></Link>
           )}
         </div>
       </div>
