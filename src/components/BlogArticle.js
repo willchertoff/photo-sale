@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 
 const propTypes = {
-  coverImage: PropTypes.string.isRequired,
+  coverImage: PropTypes.any.isRequired,
   title: PropTypes.string.isRequired,
   publishDate: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,

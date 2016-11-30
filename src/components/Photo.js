@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
 const propTypes = {
-  photoId: PropTypes.number.isRequired,
+  photoId: PropTypes.any,
   nextPhoto: PropTypes.object,
   prevPhoto: PropTypes.object,
 };

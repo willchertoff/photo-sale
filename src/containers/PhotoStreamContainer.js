@@ -6,7 +6,7 @@ import Photo from '../components/Photo';
 
 const propTypes = {
   items: PropTypes.array.isRequired,
-  photoId: PropTypes.number,
+  photoId: PropTypes.any,
   nextPhoto: PropTypes.object,
   prevPhoto: PropTypes.object,
 };
@@ -21,8 +21,9 @@ class PhotoStreamContainer extends Component {
     const { photoId, items, nextPhoto, prevPhoto } = this.props;
     const masonryImages = items.map(image => (
       <div key={image.imageId} className="image-item column small-12 medium-6 large-3">
-        <Link to={`/photo/${image.imageId}`}>
+        <Link to={`/photo/${image.imageId}`} className="m-image">
           <img src={`/images/${image.url}`} alt={image.imageId} data-name={image.imageId} />
+          <span className="hover-me">{image.title}</span>
         </Link>
       </div>));
     return photoId ? (
