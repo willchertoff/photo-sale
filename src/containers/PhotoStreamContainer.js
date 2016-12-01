@@ -33,12 +33,12 @@ class PhotoStreamContainer extends Component {
         prevPhoto={prevPhoto}
       />
     ) : (
-    <Masonry
-      className={'gal'}
-      options={this.mOptions}
-    >
-      {masonryImages}
-    </Masonry>
+      <Masonry
+        className={'gal'}
+        options={this.mOptions}
+      >
+        {masonryImages}
+      </Masonry>
     );
   }
   render() {

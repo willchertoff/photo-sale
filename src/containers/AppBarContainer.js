@@ -10,10 +10,8 @@ const AppBarContainer = () =>
       <div className="column small-6">
         <div className="nav-links">
           <ul>
-            <li><Link to="/">Photos</Link></li>
-            <li><Link to="/blog">Blog</Link></li>
-            <li><Link to="/video">Video</Link></li>
-            <li><Link to="/shop">Shop</Link></li>
+            <li><Link to="/"><img src="/icons/photos.svg" alt="Stream" /></Link></li>
+            <li><Link to="/blog"><img src="/icons/blog.svg" alt="Blog" /></Link></li>
           </ul>
         </div>
       </div>

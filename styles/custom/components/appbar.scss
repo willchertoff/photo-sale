@@ -10,11 +10,15 @@
         font-size: .875rem;
         padding: 0 .9375rem;
         line-height: 5rem;
-        color: $dgrey;
+        display: inline-block;
+        img {
+          vertical-align: middle;
+          height: 20px;
+        }
         opacity: .38;
 
         &:hover {
-          opacity: 1;
+          opacity: .64;
           cursor: pointer;
         }
       }
