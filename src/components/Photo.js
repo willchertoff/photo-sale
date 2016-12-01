@@ -12,10 +12,10 @@ const Photo = ({ photoId, nextPhoto, prevPhoto }) => {
   const hasNext = nextPhoto || false;
 
   const prevButton = hasPrev ? (
-    <Link className="prev-button" to={`/photo/${prevPhoto.imageId}`}>{prevPhoto.title}</Link>
+    <Link className="prev-button" to={`/photo/${prevPhoto.imageId}`}><img src="/icons/back-arrow.svg" alt="back" /></Link>
   ) : (false);
   const nextButton = hasNext ? (
-    <Link className="next-button" to={`/photo/${nextPhoto.imageId}`}>{nextPhoto.title}</Link>
+    <Link className="next-button" to={`/photo/${nextPhoto.imageId}`}><img src="/icons/forward-arrow.svg" alt="forward" /></Link>
   ) : (false);
   return (
     <div className="photo-single">
