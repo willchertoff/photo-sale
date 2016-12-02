@@ -21,7 +21,15 @@ const Photo = ({ photoId, nextPhoto, prevPhoto }) => {
     <div className="photo-single">
       {prevButton}
       <div className="photo-single-inner">
-        <img src={`/images/${photoId}.JPG`} alt={photoId} />
+        {
+          hasNext ? (
+            <Link to={`/photo/${nextPhoto.imageId}`}>
+              <img src={`/images/${photoId}.JPG`} alt={photoId} />
+            </Link>
+          ) : (
+            <img src={`/images/${photoId}.JPG`} alt={photoId} />
+          )
+        }
       </div>
       {nextButton}
     </div>
