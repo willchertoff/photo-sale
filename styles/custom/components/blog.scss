@@ -5,6 +5,16 @@
     height: auto;
     width: 100%;
   }
+  .blog-image {
+    display: inline-block;
+    padding: 2em 0;
+    &.half {
+      width: 50%;
+    }
+    &.third {
+      width: 33%;
+    }
+  }
 }
 
 .blog-sidebar {
@@ -26,3 +36,4 @@
 .wrap {
   position: fixed;
 }
+

@@ -38,6 +38,9 @@
   vertical-align: middle;
   width: 350px;
   text-align: center;
+  a {
+    text-decoration: none;
+  }
   span {
     display: block;
     &:nth-of-type(1) {
