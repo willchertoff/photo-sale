@@ -32,10 +32,11 @@
 .main-pic {
   vertical-align: middle;
   max-height: 25px;
-  margin-left: 60px;
+  margin-left: 20px;
   display: inline-block;
   @include breakpoint($mobile) {
     max-height: 50px;
+    margin-left: 60px;
   }
 }
 
