@@ -10,7 +10,7 @@ const Shop = ({ prints, total, onCheckoutClick }) => {
   const message = hasPrints ? (
     <p>{`${prints.length} x Prints = ${total} $`}</p>
   ) : (
-    <p>You don't have any prints selected</p>
+  <p>You don't have any prints selected</p>
   );
   const title = hasPrints ? (
     <div>

@@ -1,7 +1,7 @@
 import * as types from '../constants/ActionTypes';
 
 const items = [
-  { postId: 1, title: 'Spontaneous', subtitle: 'Try Less', publishDate: '11-3-16', createdAt: '11/1/16 1:07', location: 'Portland, OR', imageList: [2, 3, 4, 10], coverImage: 1, body: '<p>Time after time I find myself "going out" to shoot photos. I am motivated. I want to become more prolific at expressing my vision.</p><p>Recently I have realized that I can rarely consciously try to better my craft without it becoming a cheap fake of another. There is something so valuable in chance. Valuable enough to hold closely. This journal is a dedication to chance. A dedication to try less.</p><div class="blog-image-wrap center"><img class="blog-image half" src="/images/2.JPG" /></div><div class="blog-image-wrap center"><img class="blog-image half" src="/images/3.JPG" /></div>',
+  { postId: 1, title: 'Spontaneous', subtitle: 'Try Less', publishDate: '11-3-16', createdAt: '11/1/16 1:07', location: 'Portland, OR', imageList: [2, 3, 4, 10], coverImage: 1, body: '<p>Time after time I find myself "going out" to shoot photos. I am motivated. I want to become more prolific at expressing my vision.</p><p>Recently I have realized that I can rarely consciously try to better my craft without it becoming a cheap fake of another. There is something so valuable in chance. Valuable enough to hold closely. This journal is a dedication to chance. A dedication to try less.</p><div class="blog-image-wrap center"><LazyLoad height={200}><img class="blog-image half" src="/images/2.JPG" /></LazyLoad></div><div class="blog-image-wrap center"><LazyLoad height={200}><img class="blog-image half" src="/images/3.JPG" /></LazyLoad></div>',
   },
 ];
 

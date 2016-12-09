@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
+import LazyLoad from 'react-lazyload';
 import Masonry from 'react-masonry-component';
 import Photo from '../components/Photo';
 
@@ -22,7 +23,9 @@ class PhotoStreamContainer extends Component {
     const masonryImages = items.map(image => (
       <div key={image.imageId} className="image-item column small-12 medium-6 large-3">
         <Link to={`/photo/${image.imageId}`} className="m-image">
-          <img src={`/images/${image.url}`} alt={image.imageId} data-name={image.imageId} />
+          <LazyLoad height={'100%'}>
+            <img src={`/images/${image.url}`} alt={image.imageId} data-name={image.imageId} />
+          </LazyLoad>
           <span className="hover-me">{image.title}</span>
         </Link>
       </div>));
@@ -33,12 +36,12 @@ class PhotoStreamContainer extends Component {
         prevPhoto={prevPhoto}
       />
     ) : (
-      <Masonry
-        className={'gal'}
-        options={this.mOptions}
-      >
-        {masonryImages}
-      </Masonry>
+    <Masonry
+      className={'gal'}
+      options={this.mOptions}
+    >
+      {masonryImages}
+    </Masonry>
     );
   }
   render() {

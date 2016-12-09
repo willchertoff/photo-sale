@@ -1,5 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
+import LazyLoad from 'react-lazyload';
 
 const propTypes = {
   coverImage: PropTypes.any.isRequired,
@@ -16,7 +17,9 @@ class BlogArticle extends Component {
       <div className="blog-article">
         <h1 className="blog-title" >{title}</h1>
         <h2 className="blog-subtitle" >{subtitle}</h2>
-        <img src={`/images/${coverImage}.JPG`} alt={`${title}'s feature`} />
+        <LazyLoad height={'100%'}>
+          <img src={`/images/${coverImage}.JPG`} alt={`${title}'s feature`} />
+        </LazyLoad>
         <div className="blog-body" dangerouslySetInnerHTML={{ __html: body }} />
       </div>
     );

@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
+import LazyLoad from 'react-lazyload';
 
 const propTypes = {
   photoId: PropTypes.any,
@@ -24,10 +25,12 @@ const Photo = ({ photoId, nextPhoto, prevPhoto }) => {
         {
           hasNext ? (
             <Link to={`/photo/${nextPhoto.imageId}`}>
-              <img src={`/images/${photoId}.JPG`} alt={photoId} />
+              <LazyLoad height={200}>
+                <img src={`/images/${photoId}.JPG`} alt={photoId} />
+              </LazyLoad>
             </Link>
           ) : (
-            <img src={`/images/${photoId}.JPG`} alt={photoId} />
+          <img src={`/images/${photoId}.JPG`} alt={photoId} />
           )
         }
       </div>
