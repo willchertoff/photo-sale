@@ -28,9 +28,10 @@
 }
 
 .next-button {
-  @include centerer;
-  right: 50px;
-  left: auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 60px;
   display: none;
   @include breakpoint($mobile) {
     display: block;
@@ -38,8 +39,10 @@
 }
 
 .prev-button {
-  @include centerer;
-  left: 50px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 60px;
   display: none;
   @include breakpoint($mobile) {
     display: block;
