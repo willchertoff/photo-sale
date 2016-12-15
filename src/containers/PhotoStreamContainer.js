@@ -1,35 +1,62 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
-import LazyLoad from 'react-lazyload';
-import Masonry from 'react-masonry-component';
+import { ReactRpg } from 'react-rpg';
 import Photo from '../components/Photo';
 import WillStreamPic from '../components/WillStreamPic';
 
 const propTypes = {
-  items: PropTypes.array.isRequired,
   photoId: PropTypes.any,
   nextPhoto: PropTypes.object,
   prevPhoto: PropTypes.object,
+  router: PropTypes.object,
 };
 
 class PhotoStreamContainer extends Component {
-  mOptions = {
-    itemSelector: '.image-item',
-    percentPosition: true,
-  };
 
+  images = [
+    {
+      url: '/images/1.jpg',
+      clickHandler: () => { this.props.router.push('/photo/1'); },
+    },
+    {
+      url: '/images/2.jpg',
+      clickHandler: () => { this.props.router.push('/photo/2'); },
+    },
+    {
+      url: '/images/3.jpg',
+      clickHandler: () => { this.props.router.push('/photo/3'); },
+    },
+    {
+      url: '/images/4.jpg',
+      clickHandler: () => { this.props.router.push('/photo/4'); },
+    },
+    {
+      url: '/images/5.jpg',
+      clickHandler: () => { this.props.router.push('/photo/5'); },
+    },
+    {
+      url: '/images/6.jpg',
+      clickHandler: () => { this.props.router.push('/photo/6'); },
+    },
+    {
+      url: '/images/7.jpg',
+      clickHandler: () => { this.props.router.push('/photo/7'); },
+    },
+    {
+      url: '/images/8.jpg',
+      clickHandler: () => { this.props.router.push('/photo/8'); },
+    },
+    {
+      url: '/images/9.jpg',
+      clickHandler: () => { this.props.router.push('/photo/9'); },
+    },
+    {
+      url: '/images/10.jpg',
+      clickHandler: () => { this.props.router.push('/photo/10'); },
+    },
+  ]
   renderContent = () => {
-    const { photoId, items, nextPhoto, prevPhoto } = this.props;
-    const masonryImages = items.map(image => (
-      <div key={image.imageId} className="image-item column small-12 medium-6 large-3">
-        <Link to={`/photo/${image.imageId}`} className="m-image">
-          <LazyLoad height={'100%'}>
-            <img src={`/images/${image.url}`} alt={image.imageId} data-name={image.imageId} />
-          </LazyLoad>
-          <span className="hover-me">{image.title}</span>
-        </Link>
-      </div>));
+    const { photoId, nextPhoto, prevPhoto } = this.props;
     return photoId ? (
       <Photo
         photoId={photoId}
@@ -39,12 +66,7 @@ class PhotoStreamContainer extends Component {
     ) : (
       <div>
         <WillStreamPic />
-        <Masonry
-          className={'gal'}
-          options={this.mOptions}
-        >
-          {masonryImages}
-        </Masonry>
+        <ReactRpg imagesArray={this.images} columns={[1, 2, 3]} padding={10} />
       </div>
     );
   }

@@ -11,9 +11,12 @@
   }
   img {
     display: block;
-    height: 500px;
+    height: 400px;
     padding: 20px;
     margin: auto;
+    @include breakpoint($mobile) {
+      height: 500px;
+    }
   }
 }
 
