@@ -15,10 +15,10 @@ class BlogContainer extends Component {
       this.props.children
     ) :
     (
-    <BlogList
-      posts={posts}
-      onClick={this.toPost}
-    />
+      <BlogList
+        posts={posts}
+        onClick={this.toPost}
+      />
     );
   }
   render() {

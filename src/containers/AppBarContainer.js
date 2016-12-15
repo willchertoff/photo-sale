@@ -4,10 +4,7 @@ import { Link } from 'react-router';
 const AppBarContainer = () =>
   <nav>
     <div className="nav-wrapper row small-collapse">
-      <div className="column small-6">
-        <h1 className="logo"><Link to="/">Will Chertoff</Link></h1>
-      </div>
-      <div className="column small-6">
+      <div className="small-12">
         <div className="nav-links">
           <ul>
             <li><Link to="/"><img src="/icons/photos.svg" alt="Stream" /></Link></li>

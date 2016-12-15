@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import LazyLoad from 'react-lazyload';
 import Masonry from 'react-masonry-component';
 import Photo from '../components/Photo';
+import WillStreamPic from '../components/WillStreamPic';
 
 const propTypes = {
   items: PropTypes.array.isRequired,
@@ -36,12 +37,15 @@ class PhotoStreamContainer extends Component {
         prevPhoto={prevPhoto}
       />
     ) : (
-    <Masonry
-      className={'gal'}
-      options={this.mOptions}
-    >
-      {masonryImages}
-    </Masonry>
+      <div>
+        <WillStreamPic />
+        <Masonry
+          className={'gal'}
+          options={this.mOptions}
+        >
+          {masonryImages}
+        </Masonry>
+      </div>
     );
   }
   render() {

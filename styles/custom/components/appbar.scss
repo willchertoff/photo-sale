@@ -1,6 +1,6 @@
 .nav-wrapper {
   height: 80px;
-  text-align: right;
+  text-align: center;
   margin: 0 20px;
   @include breakpoint($mobile) {
     margin: 0 60px 20px 60px;

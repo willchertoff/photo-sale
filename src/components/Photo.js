@@ -30,7 +30,7 @@ const Photo = ({ photoId, nextPhoto, prevPhoto }) => {
               </LazyLoad>
             </Link>
           ) : (
-          <img src={`/images/${photoId}.JPG`} alt={photoId} />
+            <img src={`/images/${photoId}.JPG`} alt={photoId} />
           )
         }
       </div>
