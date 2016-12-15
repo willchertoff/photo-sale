@@ -1,0 +1,29 @@
+.footer {
+  padding: 40px 20px;
+  h6 {
+    font-family: 'Open Sans';
+    font-size: 14px;
+    opacity: .64;
+    text-align: center;
+    padding-bottom: 2em;
+    @include breakpoint($mobile) {
+      padding-bottom: 0;
+      text-align: left;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: black;
+    opacity: .34;
+    padding: 0 12px;
+    &:hover {
+      opacity: .54;
+    }
+  }
+  .links {
+    text-align: center;
+    @include breakpoint($mobile) {
+      text-align: right;
+    }
+  }
+}

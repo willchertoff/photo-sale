@@ -25,7 +25,7 @@ const Photo = ({ photoId, nextPhoto, prevPhoto }) => {
         {
           hasNext ? (
             <Link to={`/photo/${nextPhoto.imageId}`}>
-              <LazyLoad height={200}>
+              <LazyLoad height={500}>
                 <img src={`/images/${photoId}.JPG`} alt={photoId} />
               </LazyLoad>
             </Link>

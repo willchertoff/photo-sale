@@ -14,3 +14,9 @@ html, body {
   height: 100%;
   width: 100%;
 }
+
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
