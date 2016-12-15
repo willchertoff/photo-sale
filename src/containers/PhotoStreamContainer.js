@@ -66,7 +66,7 @@ class PhotoStreamContainer extends Component {
     ) : (
       <div>
         <WillStreamPic />
-        <ReactRpg imagesArray={this.images} columns={[1, 2, 3]} padding={10} />
+        <ReactRpg imagesArray={this.images} columns={[1, 2, 3]} padding={30} />
       </div>
     );
   }

@@ -5,8 +5,10 @@ const picStyles = {
 };
 const WillStreamPic = () =>
   <div className="main-stream-header">
-    <div className="main-stream-pic" style={picStyles} />
-    <h6>Will Chertoff</h6>
+    <a href="https://www.instagram.com/behind_your_eye/" rel="noopener noreferrer" target="_blank">
+      <div className="main-stream-pic" style={picStyles} />
+      <h6>will chertoff</h6>
+    </a>
   </div>;
 
 export default WillStreamPic;
