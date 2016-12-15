@@ -53,15 +53,18 @@
 
 .blog-subtitle {
   text-align: center;
-  font-family: 'Open Sans';
+  @extend .rale;
   font-size: 14px;
   margin-bottom: 4rem;
 }
 .blog-body {
-  font-size: 16px;
+  font-size: 12px;
   margin-top: 5em;
+  line-height: 1.7em;
+  @extend .rale;
+  font-weight: 300;
   @include breakpoint($mobile) {
-    font-size: 18px;
+    font-size: 16px;
   }
   p {
     max-width: 700px;

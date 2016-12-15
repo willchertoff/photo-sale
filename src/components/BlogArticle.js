@@ -20,7 +20,7 @@ const propTypes = {
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
+  location: PropTypes.object,
 };
 
 class BlogArticle extends Component {
