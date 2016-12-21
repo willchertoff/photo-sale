@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 import { connect } from 'react-redux';
-import AppBarContainer from './AppBarContainer';
 import { initEnvironment } from '../actions/EnvironmentActions';
+import Nav from '../components/Nav';
 
 const propTypes = {
   children: PropTypes.element.isRequired,
@@ -19,7 +20,8 @@ class AppContainer extends Component {
     const { pathname } = location;
     return (
       <div>
-        <AppBarContainer />
+        <Link to="/"><h1 className="header-title">Will Chertoff</h1></Link>
+        <Nav />
         {React.cloneElement(this.props.children, {
           key: pathname,
         })}

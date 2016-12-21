@@ -50,7 +50,8 @@
   }
   span {
     display: block;
-    font-size: 10px;
+    font-size: 12px;
+    @extend .QS;
     // @include breakpoint($mobile) {
     //   font-size: 12px;
     // }

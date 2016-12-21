@@ -30,11 +30,11 @@ class BlogArticle extends Component {
     const { pathname } = location;
     return (
       <div className="blog-article">
-        <h1 className="blog-title" >{title}</h1>
-        <h2 className="blog-subtitle" >{subtitle}</h2>
-        <LazyLoad height={'100%'}>
+        <LazyLoad height={400}>
           <img src={`/images/${coverImage}.JPG`} alt={`${title}'s feature`} />
         </LazyLoad>
+        <h1 className="blog-title" >{title}</h1>
+        <h2 className="blog-subtitle" >{subtitle}</h2>
         <div className="blog-body" dangerouslySetInnerHTML={{ __html: body }} />
         <div className="social">
           <TwitterShareButton url={`http://willchertoff.photos${pathname}`}>

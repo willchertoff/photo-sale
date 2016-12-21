@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { ReactRpg } from 'react-rpg';
 import Photo from '../components/Photo';
-import WillStreamPic from '../components/WillStreamPic';
 
 const propTypes = {
   photoId: PropTypes.any,
@@ -65,8 +64,7 @@ class PhotoStreamContainer extends Component {
       />
     ) : (
       <div>
-        <WillStreamPic />
-        <ReactRpg imagesArray={this.images} columns={[1, 2, 3]} padding={30} />
+        <ReactRpg imagesArray={this.images} columns={[1, 2, 3]} padding={20} />
       </div>
     );
   }

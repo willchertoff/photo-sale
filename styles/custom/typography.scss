@@ -9,3 +9,17 @@
 .blog-published-date {
 
 }
+
+.header-title {
+  @extend .S;
+  font-size: 22px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 40px;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
