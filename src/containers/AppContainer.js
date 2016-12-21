@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import ReactCSSTransitionReplace from 'react-css-transition-replace';
 import AppBarContainer from './AppBarContainer';
 import { initEnvironment } from '../actions/EnvironmentActions';
 
@@ -21,15 +20,9 @@ class AppContainer extends Component {
     return (
       <div>
         <AppBarContainer />
-        <ReactCSSTransitionReplace
-          transitionName="fade-wait"
-          transitionEnterTimeout={1200}
-          transitionLeaveTimeout={400}
-        >
-          {React.cloneElement(this.props.children, {
-            key: pathname,
-          })}
-        </ReactCSSTransitionReplace>
+        {React.cloneElement(this.props.children, {
+          key: pathname,
+        })}
       </div>
     );
   }

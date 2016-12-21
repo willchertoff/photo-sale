@@ -1,9 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
+// @import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Quattrocento+Sans|Quattrocento:400,700');
 
-.rale {
-  font-family: 'Raleway';
+.QS {
+  font-family: 'Quattrocento Sans', sans-serif;
+}
+.Q {
+  font-family: 'Quattrocento', serif;
 }
 
-body {
-  @extend .rale;
+.S {
+  font-family: 'Open Sans', sans-serif;
 }

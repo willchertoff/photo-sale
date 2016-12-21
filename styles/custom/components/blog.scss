@@ -14,7 +14,6 @@
   .blog-image-wrap {
     span {
       font-size: 12px;
-      font-family: 'Montserrat';
       text-align: center;
       display: block;
       padding: .5em 0 1em 0;
@@ -53,7 +52,6 @@
 
 .blog-subtitle {
   text-align: center;
-  @extend .rale;
   font-size: 14px;
   margin-bottom: 4rem;
 }
@@ -61,7 +59,6 @@
   font-size: 12px;
   margin-top: 5em;
   line-height: 1.7em;
-  @extend .rale;
   font-weight: 300;
   @include breakpoint($mobile) {
     font-size: 16px;
